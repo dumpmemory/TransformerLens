@@ -188,6 +188,7 @@
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.main_benchmark.html">transformer_lens.benchmarks.main_benchmark module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.multimodal.html">transformer_lens.benchmarks.multimodal module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.text_quality.html">transformer_lens.benchmarks.text_quality module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.text_quality_profiles.html">transformer_lens.benchmarks.text_quality_profiles module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.utils.html">transformer_lens.benchmarks.utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.vision.html">transformer_lens.benchmarks.vision module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.weight_processing.html">transformer_lens.benchmarks.weight_processing module</a></li>
@@ -868,6 +869,7 @@
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.native_sampler_kwargs"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.native_sampler_kwargs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.prepare_loading"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.prepare_loading()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.setup_component_testing"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.setup_component_testing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.supports_causal_loss"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.supports_causal_loss</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.supports_generation"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.supports_generation</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.uses_split_attention"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.uses_split_attention</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.dream.html#transformer_lens.model_bridge.supported_architectures.dream.DreamArchitectureAdapter.weight_processing_conversions"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.weight_processing_conversions</span></code></a></li>
@@ -1005,6 +1007,7 @@
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.prepare_loading"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.prepare_loading()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.prepare_model"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.prepare_model()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.setup_component_testing"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.setup_component_testing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.supports_causal_loss"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.supports_causal_loss</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.supports_fold_ln"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.supports_fold_ln</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.supports_generation"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.supports_generation</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.gidd.html#transformer_lens.model_bridge.supported_architectures.gidd.GiddArchitectureAdapter.uses_split_attention"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.uses_split_attention</span></code></a></li>
@@ -1465,7 +1468,6 @@
 <li class="toctree-l1"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.nanogpt.html">transformer_lens.model_bridge.supported_architectures.nanogpt module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.nanogpt.html#transformer_lens.model_bridge.supported_architectures.nanogpt.NanogptArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">NanogptArchitectureAdapter</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.nanogpt.html#transformer_lens.model_bridge.supported_architectures.nanogpt.NanogptArchitectureAdapter.__init__"><code class="docutils literal notranslate"><span class="pre">NanogptArchitectureAdapter.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.nanogpt.html#transformer_lens.model_bridge.supported_architectures.nanogpt.NanogptArchitectureAdapter.convert_weights"><code class="docutils literal notranslate"><span class="pre">NanogptArchitectureAdapter.convert_weights()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1769,6 +1771,8 @@
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.applicable_phases"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.applicable_phases</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.component_mapping"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.component_mapping</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.prepare_loading"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.prepare_loading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.supports_batched_generation"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.supports_batched_generation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.supports_kv_cache"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.supports_kv_cache</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.uses_split_attention"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.uses_split_attention</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.raven.html#transformer_lens.model_bridge.supported_architectures.raven.RavenArchitectureAdapter.weight_processing_conversions"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.weight_processing_conversions</span></code></a></li>
 </ul>
@@ -2466,6 +2470,11 @@ MoE on most layers (dense MLP on first few), and no biases.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.supports_causal_loss">
+<span class="sig-name descname"><span class="pre">supports_causal_loss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.supports_causal_loss" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.supports_generation">
 <span class="sig-name descname"><span class="pre">supports_generation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.supports_generation" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2856,6 +2865,11 @@ all_tied_weights_keys lookup (the checkpoint is untied anyway).</p>
 <span class="sig-name descname"><span class="pre">setup_component_testing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hf_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bridge_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.setup_component_testing" title="Link to this definition">¶</a></dt>
 <dd><p>Delegated attention reads the rotary buffer inside HF; nothing to wire.</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.supports_causal_loss">
+<span class="sig-name descname"><span class="pre">supports_causal_loss</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.supports_causal_loss" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.supports_fold_ln">
@@ -3826,11 +3840,6 @@ full-width (not per-head) Q/K norm and a sigmoid + e_score_correction_bias route
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.NanogptArchitectureAdapter.convert_weights">
-<span class="sig-name descname"><span class="pre">convert_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remote_module</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tensor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.NanogptArchitectureAdapter.convert_weights" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
@@ -4824,6 +4833,16 @@ defensive patch openelm.py applies.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.supports_batched_generation">
+<span class="sig-name descname"><span class="pre">supports_batched_generation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.supports_batched_generation" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.supports_kv_cache">
+<span class="sig-name descname"><span class="pre">supports_kv_cache</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.supports_kv_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -5329,6 +5348,7 @@ Mamba-2 step.</p>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.native_sampler_kwargs"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.native_sampler_kwargs()</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.prepare_loading"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.prepare_loading()</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.setup_component_testing"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.setup_component_testing()</span></code></a></li>
+<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.supports_causal_loss"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.supports_causal_loss</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.DreamArchitectureAdapter.supports_generation"><code class="docutils literal notranslate"><span class="pre">DreamArchitectureAdapter.supports_generation</span></code></a></li>
 </ul>
 </li>
@@ -5411,6 +5431,7 @@ Mamba-2 step.</p>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.prepare_loading"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.prepare_loading()</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.prepare_model"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.prepare_model()</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.setup_component_testing"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.setup_component_testing()</span></code></a></li>
+<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.supports_causal_loss"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.supports_causal_loss</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.supports_fold_ln"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.supports_fold_ln</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.GiddArchitectureAdapter.supports_generation"><code class="docutils literal notranslate"><span class="pre">GiddArchitectureAdapter.supports_generation</span></code></a></li>
 </ul>
@@ -5628,7 +5649,6 @@ Mamba-2 step.</p>
 </li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.NanogptArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">NanogptArchitectureAdapter</span></code></a><ul>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.NanogptArchitectureAdapter.__init__"><code class="docutils literal notranslate"><span class="pre">NanogptArchitectureAdapter.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.NanogptArchitectureAdapter.convert_weights"><code class="docutils literal notranslate"><span class="pre">NanogptArchitectureAdapter.convert_weights()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.NativeArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">NativeArchitectureAdapter</span></code></a><ul>
@@ -5786,6 +5806,8 @@ Mamba-2 step.</p>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.__init__"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.__init__()</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.applicable_phases"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.applicable_phases</span></code></a></li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.prepare_loading"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.prepare_loading()</span></code></a></li>
+<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.supports_batched_generation"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.supports_batched_generation</span></code></a></li>
+<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.RavenArchitectureAdapter.supports_kv_cache"><code class="docutils literal notranslate"><span class="pre">RavenArchitectureAdapter.supports_kv_cache</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.RecurrentGemmaArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">RecurrentGemmaArchitectureAdapter</span></code></a><ul>

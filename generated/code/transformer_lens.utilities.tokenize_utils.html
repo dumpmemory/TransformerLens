@@ -188,6 +188,7 @@
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.main_benchmark.html">transformer_lens.benchmarks.main_benchmark module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.multimodal.html">transformer_lens.benchmarks.multimodal module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.text_quality.html">transformer_lens.benchmarks.text_quality module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.text_quality_profiles.html">transformer_lens.benchmarks.text_quality_profiles module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.utils.html">transformer_lens.benchmarks.utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.vision.html">transformer_lens.benchmarks.vision module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transformer_lens.benchmarks.weight_processing.html">transformer_lens.benchmarks.weight_processing module</a></li>
@@ -670,7 +671,7 @@
 <p>This module contains utility functions related to tokenization</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="transformer_lens.utilities.tokenize_utils.get_attention_mask">
-<span class="sig-prename descclassname"><span class="pre">transformer_lens.utilities.tokenize_utils.</span></span><span class="sig-name descname"><span class="pre">get_attention_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PreTrainedTokenizerBase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepend_bos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#transformer_lens.utilities.tokenize_utils.get_attention_mask" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">transformer_lens.utilities.tokenize_utils.</span></span><span class="sig-name descname"><span class="pre">get_attention_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PreTrainedTokenizerBase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepend_bos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#transformer_lens.utilities.tokenize_utils.get_attention_mask" title="Link to this definition">¶</a></dt>
 <dd><p>Computes the attention mask for the tokenized input.
 NOTE: Only the leftmost leading pads (when <cite>padding_side == left</cite>)
 or rightmost trailing pads (when <cite>padding_side == right</cite>) are
@@ -681,6 +682,7 @@ considered as real pad tokens that should not be attended.</p>
 <li><p><strong>tokenizer</strong> (<em>PreTrainedTokenizerBase</em>) – The tokenizer used for tokenization.</p></li>
 <li><p><strong>tokens</strong> (<em>torch.Tensor</em>) – The tokenized input.</p></li>
 <li><p><strong>prepend_bos</strong> (<em>bool</em>) – If True, a BOS token is prepended to the input.</p></li>
+<li><p><strong>padding_side</strong> – The side used to pad <code class="docutils literal notranslate"><span class="pre">tokens</span></code>. Defaults to the tokenizer setting.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -694,17 +696,22 @@ considered as real pad tokens that should not be attended.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transformer_lens.utilities.tokenize_utils.get_input_with_manually_prepended_bos">
-<span class="sig-prename descclassname"><span class="pre">transformer_lens.utilities.tokenize_utils.</span></span><span class="sig-name descname"><span class="pre">get_input_with_manually_prepended_bos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bos_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#transformer_lens.utilities.tokenize_utils.get_input_with_manually_prepended_bos" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">transformer_lens.utilities.tokenize_utils.</span></span><span class="sig-name descname"><span class="pre">get_input_with_manually_prepended_bos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bos_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#transformer_lens.utilities.tokenize_utils.get_input_with_manually_prepended_bos" title="Link to this definition">¶</a></dt>
 <dd><p>Manually prepends the bos token to the input.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bos_token</strong> (<em>str</em>) – The BOS token to prepend.</p></li>
+<li><p><strong>bos_token</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The BOS token to prepend, or None for a tokenizer
+that has none (e.g. BERT, T5).</p></li>
 <li><p><strong>input</strong> (<em>str</em><em> | </em><em>list</em><em>[</em><em>str</em><em>]</em>) – The input to prepend the bos token to.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The input with the bos token manually prepended.</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>The input with the bos token manually prepended, or unchanged</dt><dd><p>when there is no BOS token to prepend.</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str | list[str]</p>
@@ -740,7 +747,7 @@ unchanged since add_bos_token=True would fail in transformers v5+ when bos_token
 
 <dl class="py function">
 <dt class="sig sig-object py" id="transformer_lens.utilities.tokenize_utils.get_tokens_with_bos_removed">
-<span class="sig-prename descclassname"><span class="pre">transformer_lens.utilities.tokenize_utils.</span></span><span class="sig-name descname"><span class="pre">get_tokens_with_bos_removed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PreTrainedTokenizerBase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#transformer_lens.utilities.tokenize_utils.get_tokens_with_bos_removed" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">transformer_lens.utilities.tokenize_utils.</span></span><span class="sig-name descname"><span class="pre">get_tokens_with_bos_removed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PreTrainedTokenizerBase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokens</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="headerlink" href="#transformer_lens.utilities.tokenize_utils.get_tokens_with_bos_removed" title="Link to this definition">¶</a></dt>
 <dd><p>Removes the bos token from the beginning of each sequence in <cite>tokens</cite>.
 The last dimension of <cite>tokens</cite> must be the sequence length.</p>
 <dl class="field-list simple">
@@ -748,6 +755,7 @@ The last dimension of <cite>tokens</cite> must be the sequence length.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tokenizer</strong> (<em>PreTrainedTokenizerBase</em>) – The tokenizer used to tokenize the input.</p></li>
 <li><p><strong>tokens</strong> (<em>torch.Tensor</em>) – The tokenized input.</p></li>
+<li><p><strong>padding_side</strong> – The side used to pad <code class="docutils literal notranslate"><span class="pre">tokens</span></code>. Defaults to the tokenizer setting.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

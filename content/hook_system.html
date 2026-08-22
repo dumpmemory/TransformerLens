@@ -188,6 +188,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.main_benchmark.html">transformer_lens.benchmarks.main_benchmark module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.multimodal.html">transformer_lens.benchmarks.multimodal module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.text_quality.html">transformer_lens.benchmarks.text_quality module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.text_quality_profiles.html">transformer_lens.benchmarks.text_quality_profiles module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.utils.html">transformer_lens.benchmarks.utils module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.vision.html">transformer_lens.benchmarks.vision module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../generated/code/transformer_lens.benchmarks.weight_processing.html">transformer_lens.benchmarks.weight_processing module</a></li>
@@ -701,6 +702,25 @@
     <span class="s2">&quot;Hello, world&quot;</span><span class="p">,</span>
     <span class="n">names_filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;hook_resid_post&quot;</span><span class="p">),</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">incl_bwd=True</span></code> to also cache gradients. This runs <code class="docutils literal notranslate"><span class="pre">backward()</span></code> on the output, so the
+run must return a scalar (<code class="docutils literal notranslate"><span class="pre">return_type=&quot;loss&quot;</span></code>); gradients land under a <code class="docutils literal notranslate"><span class="pre">_grad</span></code> suffix.
+Works on both <code class="docutils literal notranslate"><span class="pre">HookedTransformer</span></code> and <code class="docutils literal notranslate"><span class="pre">TransformerBridge</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="p">,</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">run_with_cache</span><span class="p">(</span>
+    <span class="s2">&quot;Hello, world&quot;</span><span class="p">,</span>
+    <span class="n">return_type</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">,</span>
+    <span class="n">names_filter</span><span class="o">=</span><span class="s2">&quot;blocks.0.attn.hook_pattern&quot;</span><span class="p">,</span>
+    <span class="n">incl_bwd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">cache</span><span class="p">[</span><span class="s2">&quot;blocks.0.attn.hook_pattern&quot;</span><span class="p">]</span>        <span class="c1"># attention probabilities</span>
+<span class="n">cache</span><span class="p">[</span><span class="s2">&quot;blocks.0.attn.hook_pattern_grad&quot;</span><span class="p">]</span>   <span class="c1"># d(loss) / d(attention probabilities)</span>
+</pre></div>
+</div>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">pos_slice=</span></code> to keep only some positions, which cuts cache memory on long prompts. It
+takes an index, a <code class="docutils literal notranslate"><span class="pre">(start,</span> <span class="pre">stop)</span></code> or <code class="docutils literal notranslate"><span class="pre">(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> tuple, or a list of indices, and
+applies to gradients as well:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">logits</span><span class="p">,</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">run_with_cache</span><span class="p">(</span><span class="s2">&quot;Hello, world&quot;</span><span class="p">,</span> <span class="n">pos_slice</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># final position only</span>
 </pre></div>
 </div>
 </section>
