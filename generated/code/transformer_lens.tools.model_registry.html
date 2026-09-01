@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="transformer_lens.tools.model_registry.alias_drift module" href="transformer_lens.tools.model_registry.alias_drift.html" /><link rel="prev" title="transformer_lens.tools.analysis.jacobian_lens_decomposition module" href="transformer_lens.tools.analysis.jacobian_lens_decomposition.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="transformer_lens.tools.model_registry.alias_drift module" href="transformer_lens.tools.model_registry.alias_drift.html" /><link rel="prev" title="transformer_lens.tools.analysis.projection_kernel module" href="transformer_lens.tools.analysis.projection_kernel.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.09.10 -->
         <title>transformer_lens.tools.model_registry package - TransformerLens Documentation</title>
@@ -523,6 +523,7 @@
 <li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.direct_path_patching.html">transformer_lens.tools.analysis.direct_path_patching module</a></li>
 <li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.jacobian_lens.html">transformer_lens.tools.analysis.jacobian_lens module</a></li>
 <li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.jacobian_lens_decomposition.html">transformer_lens.tools.analysis.jacobian_lens_decomposition module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.projection_kernel.html">transformer_lens.tools.analysis.projection_kernel module</a></li>
 </ul>
 </li>
 <li class="toctree-l4 current has-children current-page"><a class="current reference internal" href="#">transformer_lens.tools.model_registry package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of transformer_lens.tools.model_registry package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -610,6 +611,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../content/hook_system.html">The Hook System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/compatibility_mode.html">TransformerBridge Compatibility Mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/ssm_interpretability.html">SSM / Recurrent-Model Interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/projection_kernel.html">Projection Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/jacobian_lens_fitting.html">Fitting a Jacobian lens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/debugging_numerical_divergence.html">Debugging Numerical Divergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos/Main_Demo.html">Transformer Lens Main Demo Notebook</a></li>
@@ -994,6 +996,7 @@
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.tools.model_registry.verify_models.html#transformer_lens.tools.model_registry.verify_models.estimate_model_params"><code class="docutils literal notranslate"><span class="pre">estimate_model_params()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.tools.model_registry.verify_models.html#transformer_lens.tools.model_registry.verify_models.get_available_memory_gb"><code class="docutils literal notranslate"><span class="pre">get_available_memory_gb()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.tools.model_registry.verify_models.html#transformer_lens.tools.model_registry.verify_models.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformer_lens.tools.model_registry.verify_models.html#transformer_lens.tools.model_registry.verify_models.published_param_count"><code class="docutils literal notranslate"><span class="pre">published_param_count()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.tools.model_registry.verify_models.html#transformer_lens.tools.model_registry.verify_models.select_models_for_verification"><code class="docutils literal notranslate"><span class="pre">select_models_for_verification()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.tools.model_registry.verify_models.html#transformer_lens.tools.model_registry.verify_models.verify_models"><code class="docutils literal notranslate"><span class="pre">verify_models()</span></code></a></li>
 </ul>
@@ -2323,14 +2326,14 @@ omitted when None so default-profile entries carry no key.</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="transformer_lens.tools.analysis.jacobian_lens_decomposition.html">
+          <a class="prev-page" href="transformer_lens.tools.analysis.projection_kernel.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">transformer_lens.tools.analysis.jacobian_lens_decomposition module</div>
+                <div class="title">transformer_lens.tools.analysis.projection_kernel module</div>
                 
               </div>
             </a>

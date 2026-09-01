@@ -523,6 +523,7 @@
 <li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.direct_path_patching.html">transformer_lens.tools.analysis.direct_path_patching module</a></li>
 <li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.jacobian_lens.html">transformer_lens.tools.analysis.jacobian_lens module</a></li>
 <li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.jacobian_lens_decomposition.html">transformer_lens.tools.analysis.jacobian_lens_decomposition module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="transformer_lens.tools.analysis.projection_kernel.html">transformer_lens.tools.analysis.projection_kernel module</a></li>
 </ul>
 </li>
 <li class="toctree-l4 has-children"><a class="reference internal" href="transformer_lens.tools.model_registry.html">transformer_lens.tools.model_registry package</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of transformer_lens.tools.model_registry package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -610,6 +611,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../content/hook_system.html">The Hook System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/compatibility_mode.html">TransformerBridge Compatibility Mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/ssm_interpretability.html">SSM / Recurrent-Model Interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../content/projection_kernel.html">Projection Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/jacobian_lens_fitting.html">Fitting a Jacobian lens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../content/debugging_numerical_divergence.html">Debugging Numerical Divergence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../demos/Main_Demo.html">Transformer Lens Main Demo Notebook</a></li>
@@ -1251,14 +1253,11 @@
 <li class="toctree-l1"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html">transformer_lens.model_bridge.supported_architectures.lfm2_moe module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter.__init__"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.__init__()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter.applicable_phases"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.applicable_phases</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter.component_mapping"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.component_mapping</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter.uses_split_attention"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.uses_split_attention</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter.weight_processing_conversions"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.weight_processing_conversions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeArchitectureAdapter.setup_component_testing"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.setup_component_testing()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeBlockBridge"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeBlockBridge</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeBlockBridge.hook_aliases"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeBlockBridge.hook_aliases</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeGateBridge"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeGateBridge</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transformer_lens.model_bridge.supported_architectures.lfm2_moe.html#transformer_lens.model_bridge.supported_architectures.lfm2_moe.Lfm2MoeGateBridge.get_random_inputs"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeGateBridge.get_random_inputs()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -3454,21 +3453,18 @@ modules, leaving the batched experts at random init).</p>
 <dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">transformer_lens.model_bridge.supported_architectures.</span></span><span class="sig-name descname"><span class="pre">Lfm2MoeArchitectureAdapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="transformer_lens.model_bridge.architecture_adapter.html#transformer_lens.model_bridge.architecture_adapter.ArchitectureAdapter" title="transformer_lens.model_bridge.architecture_adapter.ArchitectureAdapter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArchitectureAdapter</span></code></a></p>
-<p>Architecture adapter for LiquidAI LFM2 MoE models.</p>
-<p>LFM2 MoE is a hybrid decoder with both short-convolution and full-attention
-layers. The adapter delegates each decoder layer to HF and exposes residual
-hooks around the whole layer rather than pretending every layer has a
-homogeneous attention/MLP substructure.</p>
+<p>Architecture adapter for LiquidAI Lfm2 MoE models.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.__init__" title="Link to this definition">¶</a></dt>
-<dd><p>Initialize the LFM2 MoE architecture adapter.</p>
+<dd><p>Initialize the Lfm2 MoE architecture adapter.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.applicable_phases">
-<span class="sig-name descname"><span class="pre">applicable_phases</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[4]</span></em><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.applicable_phases" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.setup_component_testing">
+<span class="sig-name descname"><span class="pre">setup_component_testing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hf_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bridge_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.setup_component_testing" title="Link to this definition">¶</a></dt>
+<dd><p>Set up model-specific references for component testing.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -5561,7 +5557,7 @@ Mamba-2 step.</p>
 </li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter</span></code></a><ul>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.__init__"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.applicable_phases"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.applicable_phases</span></code></a></li>
+<li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.Lfm2MoeArchitectureAdapter.setup_component_testing"><code class="docutils literal notranslate"><span class="pre">Lfm2MoeArchitectureAdapter.setup_component_testing()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#transformer_lens.model_bridge.supported_architectures.Llama4ArchitectureAdapter"><code class="docutils literal notranslate"><span class="pre">Llama4ArchitectureAdapter</span></code></a><ul>
